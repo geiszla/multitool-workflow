@@ -161,7 +161,7 @@ Step 4 – Review/fix loop (delegate to `workflow-review-fix-implementer`)
 
 Important: Perform this step using the **workflow-review-fix-implementer** subagent (if this subagent cannot be found, **STOP and ask the user to install it**).
 
-4.1. Give the subagent:
+Give the subagent:
 
 - the latest plan file,
 - the output of Step 3 (`Implementation Progress`, deviations, known limitations),
@@ -169,7 +169,7 @@ Important: Perform this step using the **workflow-review-fix-implementer** subag
 
 It will run the Codex review/fix loop (and lint/typecheck as appropriate) until stable, and produce a short report.
 
-4.2. When the subagent is done, **ask the user to review the changes** and address any remaining issues. If the user is satisfied, move on to Step 5.
+When the subagent is done, move on to Step 5.
 
 ==================================================
 Step 5 – CodeRabbit final review and fixes

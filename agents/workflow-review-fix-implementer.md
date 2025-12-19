@@ -118,6 +118,14 @@ When exiting the loop, **write the review comments and how they were addressed o
 
 > “Codex review loop concluded after N iterations. No significant issues remain.”
 
+==================================================
+Step 4 – Ask user to review changes
+==================================================
+
+4.1. **Ask the user to review the changes** and address any remaining issues.
+
+4.2 When the user is satisfied with the changes, **Re-run the linters and type checks** to ensure the new changes didn't introduce any issues and do some sanity checks on the new code. You can skip this step if the user didn't make or ask for any additional changes.
+
 Important Notes
 ===============
 
