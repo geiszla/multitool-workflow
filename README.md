@@ -18,9 +18,9 @@ review/fix loops).
 ## Prerequisites
 
 - Claude Code installed (`claude` CLI)
-- For GitHub issue workflows: GitHub MCP configured (recommended) or `gh` CLI available
-- Optional: Codex CLI (OpenAI) for the Codex review phase
-- Optional: CodeRabbit CLI for final review
+- GitHub MCP configured (recommended) or `gh` CLI available
+- Codex CLI (OpenAI)
+- CodeRabbit CLI
 
 ## Install
 
@@ -63,7 +63,28 @@ claude plugin marketplace add "$(pwd)"
 claude plugin install multitool-workflow@multitool-marketplace
 ```
 
-## Optional tool setup links
+## Usage examples
+
+The command accepts an issue number or URL (or a short description) followed by optional
+free-form comments.
+
+```text
+/github-workflow 123
+```
+
+```text
+/github-workflow 123 "Please preserve API compatibility; add tests; keep changes minimal."
+```
+
+```text
+/github-workflow https://github.com/geiszla/multitool-workflow/issues/1 "Use Opus; run Codex review; finish with CodeRabbit."
+```
+
+```text
+/github-workflow "Implement dark mode" "No issue number yet; create a plan first and ask clarifying questions."
+```
+
+## Tool setup links
 
 ### GitHub MCP (recommended)
 
