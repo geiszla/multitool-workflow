@@ -1,0 +1,8 @@
+{
+  "name": "multitool-workflow",
+  "description": "Multi-tool workflow command + agents (GitHub-first today, extensible to non-GitHub workflows).",
+  "version": "1.0.0",
+  "author": {
+    "name": "andrewg"
+  }
+}

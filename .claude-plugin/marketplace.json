@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "multitool-workflow-marketplace",
+  "version": "1.0.0",
+  "description": "Marketplace for the multitool-workflow Claude Code plugin.",
+  "owner": {
+    "name": "andrewg"
+  },
+  "plugins": [
+    {
+      "name": "multitool-workflow",
+      "description": "Multi-tool workflow command + agents (GitHub-first today, extensible to non-GitHub workflows).",
+      "version": "1.0.0",
+      "author": {
+        "name": "andrewg"
+      },
+      "source": "./",
+      "category": "development",
+      "keywords": [
+        "github",
+        "workflow",
+        "issues",
+        "review",
+        "coderabbit",
+        "codex"
+      ]
+    }
+  ]
+}
