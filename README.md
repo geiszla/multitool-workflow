@@ -85,7 +85,7 @@ The command accepts an **URL** or **issue number** followed by optional free-for
 /github-workflow 485 "Only complete points 1-3, others will be implemented in a future issue."
 ```
 
-### Usage with other workflows
+### Combine with other workflows
 
 Although the plugin includes a full workflow, it can be modified to work in combination with other workflows (e.g., brainstorming with [Superpowers](https://github.com/obra/superpowers), then implementation with *multitool* reviews). To do so, just tell the model which steps to skip.
 
@@ -98,7 +98,7 @@ Although the plugin includes a full workflow, it can be modified to work in comb
 Here are some things to look out for to use this workflow most effectively:
 
 1. **Check the GitHub issue to be implemented**. It should include a high-level description of everything you want to be implemented, but not more (e.g., don't include any implementation details you are not sure about; it's better to let the model figure them out, then you can correct it during the plan review phase).
-   - Be precise about the important details (e.g., "client specified that they would like the image to be on the right side of the screen aligned with and having the same width as the image above it"), but let it decide on the parts that are open to interpretation (e.g., how to wrap the text around the images; you automatically get a second opinion this way).
+   - Be precise about the important details (e.g., "client specified that they would like the image to be on the right side of the screen aligned with and having the same width as the image above it"), but let it decide on the parts that are open to interpretation (e.g., how to wrap the text around the images); you automatically get a second opinion this way.
    - Add references of documentation you already have or know about, otherwise instruct it to search for them on the web or consult with an MCP server.
    - Either remove any unnecessary information or instruct the agent to ignore it.
 2. The agent will only ask you about **questions that are not safe to assume an answer for** (again, so that your approach in mind doesn't influence its second opinion), then it will create a **first draft of the plan**. At this point you should **carefully check if it made any wrong assumptions** or if you know of a better approach (feel free to discuss it with the agent instead of instructing it; e.g., "what is the downside of doing it this other way instead?"). It's **important to get the high-level plan right** at this stage — as all the next steps will depend on it — but don't go into any more details than it already gave you (there is the next step for that).
