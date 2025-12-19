@@ -1,29 +1,26 @@
 # multitool-workflow (Claude Code plugin)
 
-Packages your existing `/github-workflow` command plus the two supporting agents:
-
-- `workflow-plan-executor`
-- `workflow-review-fix-implementer`
-
-## What you get
+This repo is a Claude Code plugin that provides:
 
 - Slash command: `/github-workflow`
 - Subagents:
   - `workflow-plan-executor`
   - `workflow-review-fix-implementer`
 
-Note: The plugin is named `multitool-workflow`, but it currently bundles your existing
-`/github-workflow` command unchanged. You can add other non-GitHub workflow commands later
-without changing this plugin’s identity.
+The plugin is named `multitool-workflow` so it can grow beyond GitHub-based workflows over time,
+while keeping backwards compatibility.
+
+## Recommended model
+
+This workflow works best with the **Opus** model (higher reliability for multi-step planning +
+review/fix loops).
 
 ## Prerequisites
 
-This workflow assumes you have (or can use alternatives):
-
-- GitHub MCP server configured (preferred) or `gh` CLI available
-- Optional: Figma MCP server (only if issues link Figma)
-- Optional: `codex` CLI (for the Codex review phase)
-- Optional: CodeRabbit (for the final review phase)
+- Claude Code installed (`claude` CLI)
+- For GitHub issue workflows: GitHub MCP configured (preferred) or `gh` CLI available
+- Optional: Codex CLI (OpenAI) for the Codex review phase
+- Optional: CodeRabbit CLI for final review
 
 ## Install
 
@@ -38,7 +35,7 @@ claude plugin marketplace add geiszla/multitool-workflow
 2) Install the plugin:
 
 ```bash
-claude plugin install multitool-workflow@multitool-workflow-marketplace
+claude plugin install multitool-workflow@multitool-marketplace
 ```
 
 3) Start a new Claude Code session (or restart), then run:
@@ -63,22 +60,17 @@ claude plugin marketplace add "$(pwd)"
 3) Install the plugin:
 
 ```bash
-claude plugin install multitool-workflow@multitool-workflow-marketplace
+claude plugin install multitool-workflow@multitool-marketplace
 ```
 
-## How other users get it (step-by-step)
+## Optional tool setup links
 
-1) Ensure they have Claude Code installed (the `claude` CLI).
-2) Run:
+### Codex (OpenAI)
 
-```bash
-claude plugin marketplace add geiszla/multitool-workflow
-claude plugin install multitool-workflow@multitool-workflow-marketplace
-```
+- Install Codex CLI: https://github.com/openai/codex#quickstart
+- Enable “agent mode” (interactive TUI): run `codex` (docs: https://github.com/openai/codex/blob/main/docs/getting-started.md#cli-usage)
 
-3) Start a new Claude Code session and use `/github-workflow`.
+### CodeRabbit
 
-## Sharing / contributing
-
-- Repo: https://github.com/geiszla/multitool-workflow
-- PRs welcome: add new commands under `commands/` and new agents under `agents/`.
+- Install CodeRabbit CLI: https://docs.coderabbit.ai/cli/overview#install-cli
+- Claude Code integration guide: https://docs.coderabbit.ai/cli/claude-code-integration

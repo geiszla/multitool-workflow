@@ -1,8 +1,8 @@
 {
   "name": "multitool-workflow",
-  "description": "Multi-tool workflow command + agents (GitHub-first today, extensible to non-GitHub workflows).",
+  "description": "Claude Code workflow using multiple agents and tools to make AI software development easier and more robust.",
   "version": "1.0.0",
   "author": {
-    "name": "andrewg"
+    "name": "geiszla"
   }
 }
