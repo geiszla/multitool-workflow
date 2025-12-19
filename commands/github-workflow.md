@@ -98,11 +98,10 @@ Produce a **structured, high-level plan**, not code, including:
   - performance constraints,
   - backwards compatibility.
 
-At the end of Step 1, output:
+At the end of Step 1 you should have `Draft Plan v1` – clearly numbered tasks (1, 2, 3, …). **Save this to a Markdown file** so that it can be referenced later, then output:
 
 - `Step 1 Summary` – short bullet list of what you understood.
 - `Open Questions for User` – if any, clearly listed.
-- `Draft Plan v1` – clearly numbered tasks (1, 2, 3, …).
 
 ==================================================
 Step 2 – Send the plan to Codex CLI for technical refinement (using `codex exec`)
@@ -134,11 +133,10 @@ Ask Codex to respond in a structured format:
 
 2.3. **Merge Codex’s output back into this session**
 
-- Incorporate Codex’s improvements into a **Draft Plan v2**.
+- Incorporate Codex’s improvements into a **Draft Plan v2** (modify the **Draft Plan v1** Markdown file).
 - Record:
   - All **technical decisions** it made (or suggested).
   - All **questions** it raised that still need human answers.
-- **Save it to a Markdown file** so that it can be referenced later.
 
 At the end of Step 2, output:
 
@@ -161,7 +159,9 @@ At the end of Step 3, output:
 Step 4 – Review/fix loop (delegate to `workflow-review-fix-implementer`)
 ==================================================
 
-Important: Perform this step using the **workflow-review-fix-implementer** subagent (if this subagent cannot be found, **STOP and ask the user to install it**). Give the subagent:
+Important: Perform this step using the **workflow-review-fix-implementer** subagent (if this subagent cannot be found, **STOP and ask the user to install it**).
+
+4.1. Give the subagent:
 
 - the latest plan file,
 - the output of Step 3 (`Implementation Progress`, deviations, known limitations),
@@ -169,7 +169,7 @@ Important: Perform this step using the **workflow-review-fix-implementer** subag
 
 It will run the Codex review/fix loop (and lint/typecheck as appropriate) until stable, and produce a short report.
 
-When the subagent is done, move on to Step 5.
+4.2. When the subagent is done, **ask the user to review the changes** and address any remaining issues. If the user is satisfied, move on to Step 5.
 
 ==================================================
 Step 5 – CodeRabbit final review and fixes

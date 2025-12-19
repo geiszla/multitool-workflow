@@ -93,7 +93,6 @@ At the end of Step 2:
 - Output `Codex Suggestions Addressed – Iteration N` with:
   - what was fixed,
   - what was intentionally deferred (and why).
-- Save the final review report including the summary of Step 5 to a Markdown file.
 
 ==================================================
 Step 3 – Repeat review/fix loop until stable
@@ -115,7 +114,7 @@ You may exit the loop when:
 - Remaining suggestions are minor cleanup or style-only, and
 - You note these remaining items in the final report (or TODOs in the code, if acceptable).
 
-When exiting the loop, explicitly state:
+When exiting the loop, **write the review comments and how they were addressed or why they were deferred to a Markdown file**, then explicitly state:
 
 > “Codex review loop concluded after N iterations. No significant issues remain.”
 
