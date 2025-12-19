@@ -25,12 +25,14 @@ This workflow assumes you have (or can use alternatives):
 - Optional: `codex` CLI (for the Codex review phase)
 - Optional: CodeRabbit (for the final review phase)
 
-## Install locally (this machine)
+## Install
 
-1) Add this plugin as a local marketplace:
+### Install from GitHub (recommended)
+
+1) Add the marketplace:
 
 ```bash
-claude plugin marketplace add /path/to/multitool-workflow-plugin
+claude plugin marketplace add geiszla/multitool-workflow
 ```
 
 2) Install the plugin:
@@ -39,32 +41,44 @@ claude plugin marketplace add /path/to/multitool-workflow-plugin
 claude plugin install multitool-workflow@multitool-workflow-marketplace
 ```
 
-If you use Claude Code’s interactive UI, you can also run:
+3) Start a new Claude Code session (or restart), then run:
 
-- `/plugin marketplace add /path/to/multitool-workflow-plugin`
-- `/plugin install multitool-workflow@multitool-workflow-marketplace`
+- `/github-workflow`
 
-## Sharing
+### Install from a local clone (for development)
 
-### Option A: Share as a GitHub repo (recommended)
-
-1) Put `claude-plugins/multitool-workflow-plugin` in its own repository (or subtree).
-2) Push it to GitHub (e.g. `your-org/multitool-workflow-plugin`).
-3) Other users install it:
+1) Clone:
 
 ```bash
-# Add the marketplace
-claude plugin marketplace add your-org/multitool-workflow-plugin
+git clone https://github.com/geiszla/multitool-workflow.git
+cd multitool-workflow
+```
 
-# Install the plugin from that marketplace
+2) Add your clone as a marketplace:
+
+```bash
+claude plugin marketplace add "$(pwd)"
+```
+
+3) Install the plugin:
+
+```bash
 claude plugin install multitool-workflow@multitool-workflow-marketplace
 ```
 
-### Option B: Share as a folder/zip
+## How other users get it (step-by-step)
 
-Send the `multitool-workflow-plugin` directory to someone, then they run:
+1) Ensure they have Claude Code installed (the `claude` CLI).
+2) Run:
 
 ```bash
-claude plugin marketplace add /absolute/path/to/multitool-workflow-plugin
+claude plugin marketplace add geiszla/multitool-workflow
 claude plugin install multitool-workflow@multitool-workflow-marketplace
 ```
+
+3) Start a new Claude Code session and use `/github-workflow`.
+
+## Sharing / contributing
+
+- Repo: https://github.com/geiszla/multitool-workflow
+- PRs welcome: add new commands under `commands/` and new agents under `agents/`.
