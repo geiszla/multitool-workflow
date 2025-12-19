@@ -18,7 +18,7 @@ review/fix loops).
 ## Prerequisites
 
 - Claude Code installed (`claude` CLI)
-- For GitHub issue workflows: GitHub MCP configured (preferred) or `gh` CLI available
+- For GitHub issue workflows: GitHub MCP configured (recommended) or `gh` CLI available
 - Optional: Codex CLI (OpenAI) for the Codex review phase
 - Optional: CodeRabbit CLI for final review
 
@@ -64,6 +64,18 @@ claude plugin install multitool-workflow@multitool-marketplace
 ```
 
 ## Optional tool setup links
+
+### GitHub MCP (recommended)
+
+It’s recommended to configure GitHub MCP for **both Claude Code and Codex**:
+
+- Claude Code uses it to read issues/PRs and drive `/github-workflow`.
+- Codex can use it during the Codex review phase for extra GitHub context.
+
+Setup links:
+
+- Claude Code MCP + GitHub example: https://code.claude.com/docs/en/mcp
+- Codex MCP configuration (`mcp_servers`): https://github.com/openai/codex/blob/main/docs/config.md#mcp_servers
 
 ### Codex (OpenAI)
 
