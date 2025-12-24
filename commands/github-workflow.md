@@ -98,6 +98,8 @@ Produce a **structured, high-level plan**, not code, including:
   - performance constraints,
   - backwards compatibility.
 
+**Important**: Do NOT add code blocks to the plan at this stage yet unless it's necessary for describing a requirement in the plan.
+
 At the end of Step 1 you should have `Draft Plan v1` – clearly numbered tasks (1, 2, 3, …). **Save this to a Markdown file** so that it can be referenced later, then output:
 
 - `Step 1 Summary` – short bullet list of what you understood.
@@ -123,7 +125,7 @@ Create a compact, self-contained message that includes:
 
 2.2. **Call Codex**
 
-- Use the command `codex exec --model gpt-5.2 -c model_reasoning_effort="high" "<prompt for Codex>" 2>/dev/null` to call Codex and **wait for it** until it is done (can be ~15-20 minutes). Take all its output from stdout (don't instruct it to write to a file).
+- Use the command `codex exec --model gpt-5.2 -c model_reasoning_effort="high" "<prompt for Codex>" 2>/dev/null` to call Codex and **wait for it** until it is done (**set the timeout to 30 minutes**). Take all its output from stdout (don't instruct it to write to a file).
 
 Ask Codex to respond in a structured format:
 
@@ -153,7 +155,7 @@ Important: Perform this step using the **workflow-plan-executor** subagent (if t
 At the end of Step 3, output:
 
 - `Implementation Progress` – which plan items are “done / in progress / not started”.
-- A short note of **known limitations or shortcuts** and **deviations from the plan** you intentionally made.
+- A short note of **known limitations or shortcuts** and **deviations from the plan** intentionally made.
 
 ==================================================
 Step 4 – Review/fix loop (delegate to `workflow-review-fix-implementer`)
