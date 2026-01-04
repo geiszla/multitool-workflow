@@ -68,7 +68,7 @@ Step 1 – Understand the issue & draft the initial plan
 - For each assumption, decide if it is:
   - “Safe to assume” (low risk, reversible), or
   - “Needs confirmation” (could change architecture or scope).
-- Ask the user **only the questions that need confirmation** required to unblock design:
+- **Explicitly** ask the user **only the questions that need confirmation** required to unblock design:
   - Mark them clearly as a numbered list: “Clarifying question 1, 2, 3…”
   - While waiting for answers, you may still draft a plan, but mark assumptions clearly.
 
@@ -100,7 +100,7 @@ Produce a **structured, high-level plan**, not code, including:
 
 **Important**: Do NOT add code blocks to the plan at this stage yet unless it's necessary for describing a requirement in the plan.
 
-At the end of Step 1 you should have `Draft Plan v1` – clearly numbered tasks (1, 2, 3, …). **Save this to a Markdown file** so that it can be referenced later, then output:
+At the end of Step 1 you should have `Draft Plan v1` – clearly numbered tasks (1, 2, 3, …). **Save this to a Markdown file** in the `docs` directory with the issue number in its name, so that it can be referenced later, then output:
 
 - `Step 1 Summary` – short bullet list of what you understood.
 - `Open Questions for User` – if any, clearly listed.
@@ -219,7 +219,7 @@ At the end of Step 5, output:
 Step 6 – Final report for the user
 ==================================================
 
-Produce a **clear, user-facing final report** in Markdown. Structure:
+Write a **clear, user-facing final report** in Markdown and save it to the `docs` directory with the issue number in its name. Structure:
 
 1. **Issue Reference**
    - GitHub issue number and link.

@@ -41,13 +41,14 @@ Ask Codex explicitly to review the uncommitted changes, including to:
   - This is the most important. Find issues with the current implementation, edge cases, and missing functionality.
 - Point out **security / privacy / auth** problems.
 - Suggest **performance and scalability** improvements.
-- Suggest **refactors / simplifications** while keeping behaviour the same.
+- Suggest **refactors / simplifications / cleanups** while keeping behaviour the same.
+  - Check if using a package instead of manual implementation would simplify the code.
 - Return output in sections:
 
   - `Bugs and Missing Changes`
   - `Security & Privacy`
   - `Design & Architecture`
-  - `Refactoring Opportunities`
+  - `Refactoring Opportunities & Cleanups`
   - `Style & Consistency`
   - `Questions`
 
@@ -106,6 +107,8 @@ Trigger another loop of Steps 1–3 if any of the following are true:
 - The changeset grew significantly during Step 5.
 - You materially changed architecture or core logic.
 
+Important: when repeating the loop always ask Codex to **review the whole plan with all the uncommitted changes**, not just the changes fixed in the previous iteration of the loop.
+
 3.2. **Stopping condition**
 
 You may exit the loop when:
@@ -114,7 +117,7 @@ You may exit the loop when:
 - Remaining suggestions are minor cleanup or style-only, and
 - You note these remaining items in the final report (or TODOs in the code, if acceptable).
 
-When exiting the loop, **write the review comments and how they were addressed or why they were deferred to a Markdown file**, then explicitly state:
+When exiting the loop, **write the review comments and how they were addressed or why they were deferred to a Markdown file** in the `docs` directory with the issue number in its name, then explicitly state:
 
 > “Codex review loop concluded after N iterations. No significant issues remain.”
 
